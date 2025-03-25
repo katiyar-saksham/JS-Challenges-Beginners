@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #131313;
+            color: white;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .box {
+            /* width: 300px; */
+            text-align: center;
+            padding: 20px;
+            background-color: #26272e;
+            border: 1px solid #9f969654;
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* flex-direction: column; */
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            margin: 10px;
+            object-fit: cover;
+        }
+
+        i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simple Image Slider</h1>
+        <div class="box">
+            <i id="left" class="ri-skip-left-fill"></i>
+            <img id="image" src="" alt="sample">
+            <i id="right" class="ri-skip-right-line"></i>
+        </div>
+    </div>
+
+    <script>
+        const URL_1 = "https://plus.unsplash.com/premium_photo-1741723515540-16a4e71b7d49?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8";
+
+        const URL_2 = "https://images.unsplash.com/photo-1741850820739-109eb983c478?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+        const URL_3 = "https://plus.unsplash.com/premium_photo-1742353866584-27c87d42da99?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+        const URL_4 = "https://images.unsplash.com/photo-1742293603913-a61164108169?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+        const URL_5 = "https://images.unsplash.com/photo-1742316946714-b06b7cb98e53?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D";
+
+
+        const images = [URL_1, URL_2, URL_3, URL_4, URL_5];
+
+        let index = 0;
+        const left = document.querySelector("#left");   //left
+        const img = document.querySelector("img");      // image
+        const right = document.querySelector("#right"); //right
+
+        const updateImage = () => {
+            img.src = images[index];
+        };
+
+        updateImage();
+
+        left.addEventListener('click', () => {
+            index = (index - 1 + images.length) % images.length; // Circular navigation
+            updateImage();
+        })
+        right.addEventListener('click', () => {
+            index = (index + 1) % images.length; // Circular navigation
+            updateImage();
+        });
+    </script>
+</body>
+
+</html>
