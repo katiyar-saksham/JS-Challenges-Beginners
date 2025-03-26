@@ -1,0 +1,154 @@
+ /* General Styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+:root {
+    --bg-color: #1E1E2E;
+    --text-color: white;
+    --cell-bg: rgba(255, 255, 255, 0.2);
+    --cell-hover: rgba(255, 255, 255, 0.3);
+    --win-color: #4caf50;
+}
+
+.light-mode {
+    --bg-color: white;
+    --text-color: black;
+    --cell-bg: rgba(0, 0, 0, 0.1);
+    --cell-hover: rgba(0, 0, 0, 0.2);
+    --win-color: #ff8a00;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    padding: 15px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--cell-bg);
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cell:hover {
+    background: var(--cell-hover);
+}
+
+.winner {
+    background: var(--win-color) !important;
+    color: white;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Game Status */
+#status {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+}
+
+/* Restart Button */
+#restart {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    color: white;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#restart:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #e52e71, #ff8a00);
+}
+
+/* Winner Highlight */
+.winner {
+    background: #4caf50 !important;
+    color: white;
+}
