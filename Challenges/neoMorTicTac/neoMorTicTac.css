@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: #e0e0e0;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: #1c1c1c;
+    color: white;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+/* Tic Tac Toe Board */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: 30px auto;
+    width: 330px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: inset -6px -6px 10px #ffffff, inset 6px 6px 10px #b8b8b8;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cell:active {
+    box-shadow: inset 6px 6px 10px #b8b8b8, inset -6px -6px 10px #ffffff;
+}
+
+.dark-mode .cell {
+    background: #252525;
+    box-shadow: inset -6px -6px 10px #2e2e2e, inset 6px 6px 10px #1a1a1a;
+}
+
+.dark-mode .cell:active {
+    box-shadow: inset 6px 6px 10px #1a1a1a, inset -6px -6px 10px #2e2e2e;
+}
+
+.winner {
+    background: #76c893 !important;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #e0e0e0;
+    box-shadow: inset -4px -4px 6px #ffffff, inset 4px 4px 6px #b8b8b8;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:active {
+    box-shadow: inset 6px 6px 10px #b8b8b8, inset -6px -6px 10px #ffffff;
+}
+
+.dark-mode button {
+    background: #252525;
+    box-shadow: inset -4px -4px 6px #2e2e2e, inset 4px 4px 6px #1a1a1a;
+}
+
+.dark-mode button:active {
+    box-shadow: inset 6px 6px 10px #1a1a1a, inset -6px -6px 10px #2e2e2e;
+}
